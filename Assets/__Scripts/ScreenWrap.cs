@@ -1,6 +1,7 @@
 using UnityEngine;
 public class ScreenWrap : MonoBehaviour
 {
+    [SerializeField] private MeshRenderer ObjectRenderer;
     private Vector3 ScreenBounds;
     private float ObjectWidth;
     private float ObjectHeight;
@@ -10,17 +11,14 @@ public class ScreenWrap : MonoBehaviour
         ScreenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, this.transform.position.z));
 
         // Calculate object size based on its renderer
-        Renderer objRenderer = this.GetComponent<Renderer>();
-        if (objRenderer != null)
-        {
-            ObjectWidth = objRenderer.bounds.size.x; // Width
-            ObjectHeight = objRenderer.bounds.size.y; // Height
-        }
+        ObjectWidth = ObjectRenderer.bounds.size.x; // Width
+        ObjectHeight = ObjectRenderer.bounds.size.y; // Height
     }
 
     void Update()
     {
         Vector3 newPos = this.transform.position;
+        print($"ScreenBounds.x: {ScreenBounds.x} \nObjectWidth: {ObjectWidth}");
 
         // Wrap horizontally (X-axis)
         if (this.transform.position.x > (ScreenBounds.x + ObjectWidth))
