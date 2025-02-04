@@ -18,7 +18,6 @@ public class ScreenWrap : MonoBehaviour
     void Update()
     {
         Vector3 newPos = this.transform.position;
-        print($"ScreenBounds.x: {ScreenBounds.x} \nObjectWidth: {ObjectWidth}");
 
         // Wrap horizontally (X-axis)
         if (this.transform.position.x > (ScreenBounds.x + ObjectWidth))
