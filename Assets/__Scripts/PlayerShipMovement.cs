@@ -4,6 +4,7 @@ public class PlayerShipMovement : MonoBehaviour
 {
     private float Speed = 400f;
     private Rigidbody _RigidBody;
+    public Vector3 MousePosition;
 
 
     void Start()
@@ -24,11 +25,14 @@ public class PlayerShipMovement : MonoBehaviour
         Vector3 direction = (mousePosition - transform.position).normalized;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90f;
         transform.rotation = Quaternion.Euler(0f, 0f, angle);
+
+        MousePosition = direction;
     }
 
 
-    void moveCharacter(Vector3 direction)
+    private void moveCharacter(Vector3 direction)
     {
         _RigidBody.velocity = direction * Speed * Time.fixedDeltaTime;
     }
+    
 }

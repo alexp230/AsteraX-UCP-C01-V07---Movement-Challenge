@@ -141,6 +141,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc5324942ee67dc44b453bf75ab6f461, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MousePosition: {x: 0, y: 0, z: 0}
+--- !u!114 &884730120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 884730118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f439b817b31e884ea78f2af73608f34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Bullet_Prefab: {fileID: 1657914042213664, guid: 0e9c239fd33d94404b671bc44ab4f6b4,
+    type: 3}
 --- !u!1 &1010190643
 GameObject:
   m_ObjectHideFlags: 0
