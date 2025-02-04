@@ -1,5 +1,4 @@
 using UnityEngine;
-
 public class ScreenWrap : MonoBehaviour
 {
     private Vector3 ScreenBounds;
@@ -8,15 +7,14 @@ public class ScreenWrap : MonoBehaviour
 
     void Start()
     {
-        // Get screen bounds in world coordinates
         ScreenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, this.transform.position.z));
 
         // Calculate object size based on its renderer
         Renderer objRenderer = this.GetComponent<Renderer>();
         if (objRenderer != null)
         {
-            ObjectWidth = objRenderer.bounds.extents.x; // Half-width
-            ObjectHeight = objRenderer.bounds.extents.y; // Half-height
+            ObjectWidth = objRenderer.bounds.size.x; // Width
+            ObjectHeight = objRenderer.bounds.size.y; // Height
         }
     }
 
@@ -38,5 +36,4 @@ public class ScreenWrap : MonoBehaviour
 
         this.transform.position = newPos;
     }
-
 }
